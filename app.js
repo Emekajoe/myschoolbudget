@@ -83,6 +83,18 @@ if (balance <= 0) {
 btnFormExpense.addEventListener("click", function (e) {
   e.preventDefault();
   const [formExpensePrice, formExpenseItem] = formExpenseInput;
+  if (formExpensePrice.value > balance) {
+    console.log(`Form expense greater than balance.`);
+    displayErrorToUI(`Oops! Your purchase amount is bigger than your balance`);
+
+    setTimeout(
+      () =>
+        displayErrorToUI(
+          `Pls kindly input your expense amount and the product below `
+        ),
+      4000
+    );
+  }
   if (
     formExpensePrice.value &&
     formExpenseItem.value &&
@@ -102,6 +114,7 @@ btnFormExpense.addEventListener("click", function (e) {
   }
 
   if ((formExpensePrice.value && formExpenseItem.value) || balance <= 0) {
+    console.log(`error coming from line 2`);
     displayErrorToUI(
       `You haven't added any money yet or your balance is empty! `
     );
@@ -111,14 +124,6 @@ btnFormExpense.addEventListener("click", function (e) {
           `Pls kindly input your expense amount and the product below `
         ),
       4000
-    );
-  } else if (formExpensePrice.value) {
-    console.log(formExpensePrice);
-    console.log(`error`);
-    displayErrorToUI(`Oops! Your purchase amount is bigger than your balance`);
-  } else {
-    displayErrorToUI(
-      `Pls kindly input your expense amount and the product below `
     );
   }
 
