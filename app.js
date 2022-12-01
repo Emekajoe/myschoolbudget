@@ -113,7 +113,7 @@ btnFormExpense.addEventListener("click", function (e) {
     formExpensePrice.value = formExpenseItem.value = "";
   }
 
-  if ((formExpensePrice.value && formExpenseItem.value) || balance <= 0) {
+  if (!formExpensePrice.value && !formExpenseItem.value) {
     console.log(`error coming from line 2`);
     displayErrorToUI(
       `You haven't added any money yet or your balance is empty! `
