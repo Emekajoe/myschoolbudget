@@ -63,6 +63,7 @@ btnAddMoney.addEventListener("click", function (e) {
     balance += +formAmountInput.value;
 
     displayBudgetBalance(balance, budgetAmount);
+    budgetAmount.style.color = "white";
     formAmountInput.classList.remove("move-right");
     e.target.classList.add("budget__btn--no-effect");
 
@@ -72,13 +73,21 @@ btnAddMoney.addEventListener("click", function (e) {
   }
 });
 
+if (balance <= 0) {
+  budgetAmount.style.color = "red";
+  console.log(`budget amount is red`);
+} else if (balance === 0) {
+  console.log(`budget amount is red`);
+}
+
 btnFormExpense.addEventListener("click", function (e) {
   e.preventDefault();
   const [formExpensePrice, formExpenseItem] = formExpenseInput;
   if (
     formExpensePrice.value &&
     formExpenseItem.value &&
-    balance >= leastAmount
+    balance >= leastAmount &&
+    balance >= formExpensePrice.value
   ) {
     balance -= formExpensePrice.value;
 
@@ -103,9 +112,15 @@ btnFormExpense.addEventListener("click", function (e) {
         ),
       4000
     );
+  } else if (formExpensePrice.value) {
+    console.log(formExpensePrice);
+    console.log(`error`);
+    displayErrorToUI(`Oops! Your purchase amount is bigger than your balance`);
   } else {
     displayErrorToUI(
       `Pls kindly input your expense amount and the product below `
     );
   }
+
+  budgetAmount.style.color = "red";
 });
