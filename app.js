@@ -41,6 +41,8 @@ const addToUI = function (data) {
   });
 };
 
+formExpenseInput.value < 0 && null;
+
 const displayBudgetBalance = (bal, budgetType) =>
   (budgetType.textContent = `#${bal}`);
 
