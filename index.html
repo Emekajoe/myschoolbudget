@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget</title>
+    <link rel="stylesheet" href="main.css" />
+    <script defer src="app.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Jost:ital,wght@0,400;0,500;0,600;1,300;1,400;1,500&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header"></header>
+      <main class="main">
+        <h1 class="budget__amount"></h1>
+        <p class="error-msg">
+          Your input must be 5 and above numbers or atleast 2 numbers.
+        </p>
+        <h5 class="budget__remaining">
+          Out of <span class="budget__remaining--amount">1000</span> budgeting
+        </h5>
+        <form action="#" class="form">
+          <div class="form__group">
+            <label for="amount" class="form__label"></label>
+            <input
+              class="form__amount"
+              type="number"
+              id="amount"
+              name="amount"
+              id=""
+              placeholder="Amount here"
+            />
+          </div>
+          <div class="form__group">
+            <input class="budget__btn" type="submit" value="+ Add Money" />
+          </div>
+        </form>
+        <section class="quote">
+          <blockquote>
+            Pls kindly input your expense amount and the product below
+          </blockquote>
+        </section>
+        <form action="" class="form-expense">
+          <div class="form__group form__group--expense">
+            <input
+              type="number"
+              id="amount"
+              name=""
+              class="form-expense__input"
+              placeholder="Expense"
+            />
+            <label for="amount" class="form-expense__label">Expense</label>
+          </div>
+          <div class="form__group form__group--expense">
+            <input
+              type="text"
+              id="name"
+              name=""
+              class="form-expense__input"
+              placeholder="Item"
+            />
+            <label class="form-expense__label" for="name" class="form__label"
+              >Product name</label
+            >
+          </div>
+          <div class="form__group">
+            <input class="form-expense__btn" type="submit" value="+" />
+          </div>
+        </form>
+        <section class="expense"></section>
+      </main>
+      <footer class="footer">
+        <div class="info">
+          If you found this web app interesting, Pls support me with paypal by
+          donating
+          <a href="https://www.paypal.me/adonisjoe" class="info__link"
+            >to my Paypal or send to the username @adonisjoe10</a
+          >
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
